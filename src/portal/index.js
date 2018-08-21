@@ -62,11 +62,11 @@ class Home extends Component {
                 minHeight: 280
               }}
             >
-              {this.props.children}
+            <Route path="/nav1" component={Nav1}/>
             </Content>
           </Layout>
         </Layout>
-        <Route path="/nav1" component={Nav1}/>
+    
       </div>
     );
   }
