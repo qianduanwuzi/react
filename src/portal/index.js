@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { Link, Route } from "react-router-dom";
-import Nav1 from '../components/nav1';
+import Nav1 from '../components/nav1_index';
+import Nav2 from '../components/nav2';
+import Nav3 from '../components/nav3';
+import Nav4 from '../components/nav4';
+import Nav5 from '../components/nav5';
 import menuList from "./menu";
 import "./index.css";
 import { Layout, Menu, Icon } from "antd";
@@ -36,9 +40,9 @@ class Home extends Component {
         </Menu.Item>
       );
     });
-    console.log(this.props.children);
+    console.log(this.props);
+    const {pathname} = this.props.location;
     return (
-      <div>
         <Layout className="in_container">
           <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
             <div className="logo" />
@@ -62,12 +66,14 @@ class Home extends Component {
                 minHeight: 280
               }}
             >
-            <Route path="/nav1" component={Nav1}/>
+            <Route path="/nav1"  component={Nav1}/>
+            <Route path="/nav2"  component={Nav2}/>
+            <Route path="/nav3"  component={Nav3}/>
+            <Route path="/nav4"  component={Nav4}/>
+            <Route path="/nav5"  component={Nav5}/>
             </Content>
           </Layout>
         </Layout>
-    
-      </div>
     );
   }
 }

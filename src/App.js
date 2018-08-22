@@ -6,13 +6,15 @@ import {
   Route,
   Switch,
 } from 'react-router-dom'
-import logo from './logo.svg';
 // 引入 homejs
 import './App.css';
 import Home from './portal/index';
-import Nav1 from './components/nav1';
-import Nav2 from './components/nav2';
-import Nav3 from './components/nav3';
+import Login from './components/login'
+// import Nav1 from './components/nav1';
+// import Nav2 from './components/nav2';
+// import Nav3 from './components/nav3';
+// import Nav4 from './components/nav4';
+// import Nav5 from './components/nav5';
 
 class App extends Component {
   componentDidMount() {
@@ -25,16 +27,24 @@ class App extends Component {
 
   componentDidUpdate() {
     // alert(3)
-       // <Route path="/nav1" component={Nav1}/>
-        // <Route path="/nav2" component={Nav2}/>
-        // <Route path="/nav3" component={Nav3}/>
   }
+
+  componentWillReceiveProps(newProps) {
+    // console.log(newProps.location.pathname != '')
+    // this.props.history.replace('/login') // replace 直接替换记录  push 是添加一条记录
+    // this.props.history.push('/path') 
+    // this.props.match.params.xxx
+  }
+
   render() {
     console.log(this)
     return (
         <Router>
           <div className="out_container">
-            <Route  path="/" component={Home}/>
+            <Switch> 
+              <Route  path="/login" component={Login}/>
+              <Route  path="/"  component={Home}/>
+            </Switch> 
           </div> 
         </Router>
     );
